@@ -6,7 +6,7 @@ class Author(models.Model):
     surname = models.CharField(blank=True, max_length=20)
 
     def __str__(self):
-        return self.surname
+        return f'Id {self.id}: {self.name}'
 
     @staticmethod
     def create(name, surname):
