@@ -1,0 +1,19 @@
+{% extends 'base_book.html' %}
+
+{% block title%}
+  Books
+{% endblock %}
+
+{% block content %}
+
+  <h1 class='mb-5'>Books in library:</h1>
+
+  {% for book in books %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Book name: {{ book.name }}</h5>
+            <p class="card-text">Book id: {{ book.id }} </p>
+        </div>
+    </div>
+  {% endfor %}
+{% endblock %}

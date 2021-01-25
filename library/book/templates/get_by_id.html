@@ -1,0 +1,16 @@
+{% extends 'base_book.html' %}
+
+{% block title%}
+  {{ book.name }}
+{% endblock %}
+
+{% block content %}
+<div class="text-left mt-5">
+  <h1>
+    Book name: {{ book.name }}
+  </h1>
+  <h2>Author: {{ authors }}</h2>
+  <h5>ID book: {{ book.id }}</h5>
+  <img src="http://placeimg.com/640/480/animals" class="rounded" alt="Book cover">
+</div>
+{% endblock %}
