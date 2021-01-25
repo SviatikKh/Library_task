@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     #'author.apps.AuthorConfig',
     'book',
     #'book.apps.BookConfig',
+
+    'rest_framework',
+
+
 ]
 
 MIDDLEWARE = [

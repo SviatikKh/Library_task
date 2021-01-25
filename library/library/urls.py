@@ -20,4 +20,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^author/', include('author.urls')),
     url(r'^book/', include('book.urls')),
+
+    url('api/v1/books/', include('book.urls')),
+    url('api/v1/authors/', include('author.urls')),
 ]

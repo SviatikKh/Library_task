@@ -4,6 +4,9 @@ from django.views.generic import ListView
 
 from author.models import Author
 
+from .serializers import AuthorListSerializer, AuthorDetailSerializer
+from rest_framework import generics
+
 
 def get_all_authors(request):
     author1 = Author(id=1, name="Victor", surname="Hugo")
@@ -40,3 +43,19 @@ def delete_author_by_id(request, id):
 
 class AuthorList(ListView):
     model = Author
+
+
+# =====    REST   ============
+
+class AuthorCreateView(generics.CreateAPIView):
+    serializer_class = AuthorDetailSerializer
+
+
+class AuthorListView(generics.ListAPIView):
+    serializer_class = AuthorListSerializer
+    queryset = Author.objects.all()
+
+
+class AuthorDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = AuthorDetailSerializer
+    queryset = Author.objects.all()

@@ -5,6 +5,9 @@ from django.views.generic import ListView
 from author.models import Author
 from book.models import Book
 
+from .serializers import BookListSerializer, BookDetailSerializer
+from rest_framework import generics
+
 
 def get_all(request):
     books = Book.get_all()
@@ -41,3 +44,20 @@ def clear_authors(request, id):
 
 class BookList(ListView):
     model = Book
+
+
+# =====    REST   ============
+
+class BookCreateView(generics.CreateAPIView):
+    serializer_class = BookDetailSerializer
+
+
+class BookListView(generics.ListAPIView):
+    serializer_class = BookListSerializer
+    queryset = Book.objects.all()
+
+
+class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = BookDetailSerializer
+    queryset = Book.objects.all()
+
