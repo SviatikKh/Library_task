@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>{{ author.id }}</td>
+        <td>{{ author.name }}</td>
+        <td>{{ author.surname }}</td>
+</tr>
+</tbody>
+</table>
+{% endblock %}

@@ -5,6 +5,7 @@ from author.models import Author
 class Book(models.Model):
     name = models.CharField(blank=True, max_length=100)
     authors = models.ManyToManyField(Author, related_name='books')
+    cover = models.ImageField(null=True)
 
     def __str__(self):
         return f'Id {self.id}: {self.name}'

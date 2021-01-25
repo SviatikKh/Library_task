@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{%  block content %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for author in authors_list %}
+      <tr>
+        <td>{{ author.id }}</td>
+        <td>{{ author.name }}</td>
+        <td>{{ author.surname }}</td>
+        <td><a href="{{ author.get_absolute_url }}" class="btn btn-secondary">Show more</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
